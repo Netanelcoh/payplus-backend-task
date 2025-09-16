@@ -1,0 +1,4 @@
+{
+  "port": "3900",
+  "database_url": "sqlserver://localhost:1433;database=logistics;user=sa;password=MyMssqlP@ssw0rd;trustServerCertificate=true"
+}
