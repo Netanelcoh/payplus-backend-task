@@ -2,6 +2,7 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const prisma = require("../startup/db");
+// const { v4: uuidv4 } = require("uuid");
 
 async function createUser(userData) {
   try {
@@ -27,12 +28,12 @@ function generateAuthToken(user) {
       id: user.id,
       email: user.email,
       name: user.full_name,
+      //jti: uuidv4(),
     },
     config.get("jwtPrivateKey")
   );
   return token;
 }
-
 
 exports.createUser = createUser;
 exports.generateAuthToken = generateAuthToken;

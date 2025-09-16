@@ -27,4 +27,8 @@ router.get("/customer/:id", async (req, res) => {
   res.status(200).send(customers);
 });
 
+router.post("/logout", async (req,res) => {
+  // get jti from jwt payload
+  // add jti to blacklist (for simplicity add to local cache)
+})
 module.exports = router;
