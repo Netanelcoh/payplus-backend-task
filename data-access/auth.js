@@ -33,15 +33,6 @@ function generateAuthToken(user) {
   return token;
 }
 
-function validateUser(user) {
-  const schema = {
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(5).max(255).required(),
-  };
-
-  return Joi.validate(user, schema);
-}
 
 exports.createUser = createUser;
-exports.validate = validateUser;
 exports.generateAuthToken = generateAuthToken;
